@@ -10,22 +10,35 @@ public class Main {
         Paralelogramo p = new Paralelogramo();
         System.out.println("Bienvenido al sistema de figuras");
         while (true) {
-            System.out.println("cuantos puntos desea ingresar 3 o 4: ");
-            int opcion = Integer.parseInt(scan.nextLine());
+            try {
+                System.out.println("cuantos puntos desea ingresar 3 o 4: ");
+                int opcion = Integer.parseInt(scan.nextLine());
+                if(opcion >=5){
+                    System.out.println("\033[31mIngrese un numero valido");
+                }
+                
+                if (opcion == 3) {
+                    f.IngresarTriangulo();
+                } else {
+                    p.ingresarParalelogramo();
+                    
+                }
+                System.out.println("Desea salir?");
+                System.out.println("1.-Continuar ");
+                System.out.println("2.-Salir");
+                int opcionsalir = Integer.parseInt(scan.nextLine());
+                if (opcionsalir == 2) {
+                    break;
+                
+                }
+                
 
-            if (opcion == 3) {
-                f.IngresarTriangulo();
-            } else {
-                p.ingresarParalelogramo();
+                
+
+            } catch (Exception e) {
+                System.out.println("\033[36mSolo ingrese numeros separados por una coma");
             }
 
-            System.out.println("Desea salir?");
-            System.out.println("1.-Continuar ");
-            System.out.println("2.-Salir");
-            int opcionsalir = Integer.parseInt(scan.nextLine());
-            if (opcionsalir == 2) {
-                break;
-            }
         }
 
     }
