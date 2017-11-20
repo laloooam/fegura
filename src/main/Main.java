@@ -14,7 +14,7 @@ public class Main {
                 System.out.println("cuantos puntos desea ingresar 3 o 4: ");
                 int opcion = Integer.parseInt(scan.nextLine());
                 if (opcion >= 5) {
-                    System.out.println("\033[31mIngrese un numero valido");
+                    System.out.println("\033[31mIngrese un numero valido porfavor");
                 }
 
                 if (opcion == 3) {
@@ -29,6 +29,7 @@ public class Main {
                 System.out.println("2.-Salir");
                 int opcionsalir = Integer.parseInt(scan.nextLine());
                 if (opcionsalir >= 2) {
+                    System.out.println("\033[36mOpcion Invalida");
                     break;
 
                 }
