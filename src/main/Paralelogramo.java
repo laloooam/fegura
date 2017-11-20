@@ -54,18 +54,46 @@ public class Paralelogramo extends Triangulo{
         
         if(distancia1 == distancia3 && distancia2 == distancia4 ){
             System.err.println("[Cuadrado]");
+            calcularPerimetroCuadrado();
         }
         if(distancia1 !=distancia2 && distancia4!= distancia3){
             System.err.println("[Rectangulo]");
+            calcularPerimetroRectangulo();
         }
         if(distancia1 >= distancia2 && distancia3 >= distancia4){
             System.err.println("[Rombo]");
+            calcularPerimetroRombo();
         }
         
         
         
     }
-
+    
+    public void calcularPerimetroCuadrado(){
+        for (int i = 0; a.length< 10; i++) {
+            float perimetro = (float)(b[i]*4);
+            System.out.println("Perimetro Cuadrado:"+perimetro);
+            break;
+            
+        }
+    }
+    
+    public void calcularPerimetroRectangulo(){
+        for (int i = 0; i <a.length; i++) {
+            float perimetro = (float)(2*(1+a[i]));
+            System.out.println("Perimetro Rectangulo:"+perimetro);
+            
+        }
+    }
+    
+    public void calcularPerimetroRombo(){
+        for (int i = 0; i < a.length; i++) {
+            float perimetro = (float) (a[i]+b[i]+c[i]+d[i]);
+            System.out.println("Perimetro Rombo"+perimetro);
+            break;
+        }
+    }
+    
     
     
     
