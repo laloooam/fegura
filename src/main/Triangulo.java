@@ -48,6 +48,7 @@ public class Triangulo {
         if (distancia1 == distancia2 && distancia1 == distancia3) {
             System.err.println("triangulo equilatero");
             calcularPerimetroEquilatero();
+            calcularAreaEqui();
         }
         if (distancia1 == distancia2 && distancia1 != distancia3) {
             if (distancia2 == distancia3 && distancia3 != distancia1) {
@@ -58,6 +59,7 @@ public class Triangulo {
             }
             System.err.println("isoseles");
             calcularPerimatroIsoseles();
+            calcularAreaIsoseles();
         }
         if (distancia1 != distancia2 && distancia1 != distancia3) {
             System.err.println("Escaleno");
@@ -94,6 +96,24 @@ public class Triangulo {
         for (int i = 0; i < a.length; i++) {
             float perimetro = (float)(a[i]+b[i]+c[i]);
             System.out.println("Perimetro Escaleno:"+perimetro);
+            break;
+            
+        }
+    }
+    
+    public void calcularAreaEqui(){
+        for (int i = 0; i <a.length; i++) {
+            double area = Math.sqrt(2)/4*Math.pow(a[i],2);
+            System.out.println("Area Equilatero:"+area);
+            break;
+            
+        }
+    }
+    
+    public void calcularAreaIsoseles(){
+        for (int i = 0; i < a.length; i++) {
+            double area = b[i]*Math.sqrt(Math.pow(a[i], 2)-Math.pow(b[i], 2)/4)/2;
+            System.out.println("Area Isoseles:"+area);
             break;
             
         }
