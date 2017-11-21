@@ -9,6 +9,7 @@ public class Main {
         Triangulo f = new Triangulo();
         Paralelogramo p = new Paralelogramo();
         System.out.println("Bienvenido al sistema de figuras");
+        etiqueta:
         while (true) {
             try {
                 System.out.println("cuantos puntos desea ingresar 3 o 4: ");
@@ -24,16 +25,27 @@ public class Main {
 
                     p.ingresarParalelogramo();
                 }
-                System.out.println("Desea salir?");
-                System.out.println("1.-Continuar ");
-                System.out.println("2.-Salir");
-                int opcionsalir = Integer.parseInt(scan.nextLine());
-                if (opcionsalir >= 2) {
-                    System.out.println("\033[36mOpcion Invalida");
-                    break;
+                try {
+                    while (true) {
+                        System.out.println("Desea salir?");
+                        System.out.println("1.-Continuar ");
+                        System.out.println("2.-Salir");
+                        int opcionsalir = Integer.parseInt(scan.nextLine());
+                        if (opcionsalir >= 2) {
+                            System.out.println("\033[36mOpcion Invalida");
 
+                        } else if (opcionsalir == 2) {
+                            break etiqueta;
+                        }
+                        if(opcionsalir == 1){
+                            break;
+                            
+                        }
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("Ingrese numero valido..");
                 }
-                
 
             } catch (Exception e) {
                 System.out.println("\033[36mSolo ingrese numeros separados por una coma");
